@@ -1,5 +1,6 @@
 Redux Toolkit Workflow: Step-by-Step Guide
-1.	Define the Feature Slice
+
+1. Define the Feature Slice
 
 Each feature (state) in your app should have its own slice. This slice:
 
@@ -23,8 +24,7 @@ const counterSlice = createSlice({
 export const { increment, decrement } = counterSlice.actions; // Export actions
 export default counterSlice.reducer; // Export reducer
 
-
-2.	Configure the Redux Store
+2. Configure the Redux Store
 
 The store holds all slices in a structured way. Each key in the store represents a different feature.
 
@@ -43,12 +43,7 @@ const store = configureStore({
 
 export default store;
 
-
-
-
-
-
-3.	Provide the store to the React App
+3. Provide the store to the React App
 
 To connect Redux to React, wrap your app with Provider, so all components can access the store.
 
@@ -67,22 +62,7 @@ ReactDOM.render(
   document.getElementById('root')
 );
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-4.	Select State from the Redux Store using useSelector() 
+4. Select State from the Redux Store using useSelector() 
 
 Components use the useSelector() hook to access specific slices of state from Redux.
 
@@ -96,28 +76,7 @@ const CounterDisplay = () => {
   return <h1>Counter: {count}</h1>;
 };
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-5.	Dispatch Actions using useDispatch() 
+5. Dispatch Actions using useDispatch() 
 
 Actions trigger state changes in Redux. Use the useDispatch() hook to send actions to Redux. 
 
@@ -137,27 +96,13 @@ const CounterControls = () => {
   );
 };
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-6.	Redux Forwards the Action to the Respective Reducer
+6. Redux Forwards the Action to the Respective Reducer
 
 -	When dispatch(increment()) is called, Redux forwards the action to the counterSlice reducer.
 
 -	The reducer checks the action.type and updates the state accordingly. 
 
-7.	The Reducer Updates the State
+7. The Reducer Updates the State
 
 The reducer modifies the state based on the action type. 
 
@@ -181,9 +126,7 @@ Once the reducer modifies the state, Redux updates the store with the new state 
 
 -	This ensures performance without unnecessary re-renders. 
 
-
-
-10.	The Updated State Reflects the UI
+10. The Updated State Reflects the UI
 
 After re-rendering, the latest state values are displayed in the UI.
 
@@ -194,29 +137,6 @@ const CounterDisplay = () => {
 
   return <h1>Counter: {count}</h1>; // Updated count will be shown here
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 Final Summary of the Redux Toolkit Workflow:
 -	Create a Slice for each feature (state).
