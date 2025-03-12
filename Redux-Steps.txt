@@ -144,7 +144,7 @@ Final Summary of the Redux Toolkit Workflow:
 -	Export Actions & Reducers from the slice. 
 -	Configure the Store by adding all feature slices. 
 -	Provide the Store to the App by using the <Provider />. 
--	Use the useSelector() hook Read State inside the components.
+-	Use the useSelector() hook to Read State inside the components.
 -	Use the useDispatch() hook to Send Actions to Redux.
 -	Reducer Modifies the State based on the action type.
 -	Redux updates the Store with new state values.
