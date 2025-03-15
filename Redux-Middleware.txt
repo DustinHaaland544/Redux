@@ -1,10 +1,11 @@
 Redux Middleware and Thunk: A Simplified Overview
 
-When working with Redux, you often need to handle asynchronous operations (like fetching data from an API) while keeping your state management predictable and clean. 
-This is where Redux Middleware and Redux Thunk come in.
+When working with Redux, you often need to handle asynchronous operations (like fetching data from an API) while keeping your state management predictable and 
+clean. This is where Redux Middleware and Redux Thunk come in.
 
 1. What is Redux Middleware?
-- Middleware in Redux is a function that sits between dispatching an action and the moment it reaches the reducer. It allows you to modify, delay, or log actions before they hit the reducer.
+- Middleware in Redux is a function that sits between dispatching an action and the moment it reaches the reducer. It allows you to modify, delay, or log actions 
+before they hit the reducer.
 
 Why Do We Need Middleware?
 
@@ -19,8 +20,8 @@ Redux itself only allows synchronous updates to the state. However, real-world a
 2. Redux Thunk: The Most Common Middleware
 
 What is Redux Thunk?
-- Thunk is a middleware that allows you to write action creators that return a function instead of an action. This function can delay the action’s dispatch or dispatch 
-  multiple actions asynchronously.
+- Thunk is a middleware that allows you to write action creators that return a function instead of an action. This function can delay the action’s dispatch or 
+dispatch multiple actions asynchronously.
 
 Why Use Redux Thunk?
 - Handles asynchronous logic: Allows you to make API calls inside Redux actions.
