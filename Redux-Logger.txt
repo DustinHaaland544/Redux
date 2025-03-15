@@ -1,6 +1,7 @@
 Redux Logger & Middleware: A Complete, Simplified Overview
 1. What is Redux Logger?
-Redux Logger is a middleware for Redux that logs every action dispatched to the store. It helps developers debug and track state changes in real-time by printing useful logs in the browser console.
+Redux Logger is a middleware for Redux that logs every action dispatched to the store. It helps developers debug and track state changes in real-time by printing 
+useful logs in the browser console.
 
 Key Features:
 
@@ -9,7 +10,8 @@ Key Features:
 - Works only in development mode (configurable).
 
 2. What is Middleware in Redux?
-In Redux, middleware is a function that sits between dispatching an action and reaching the reducer. It can modify, log, or delay actions before they reach the reducer.
+In Redux, middleware is a function that sits between dispatching an action and reaching the reducer. It can modify, log, or delay actions before they reach the 
+reducer.
 
 Middleware can be used for: 
 - Logging (e.g., Redux Logger)
