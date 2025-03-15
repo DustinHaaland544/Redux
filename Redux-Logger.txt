@@ -1,0 +1,150 @@
+Redux Logger & Middleware: A Complete, Simplified Overview
+1. What is Redux Logger?
+Redux Logger is a middleware for Redux that logs every action dispatched to the store. It helps developers debug and track state changes in real-time by printing useful logs in the browser console.
+
+Key Features:
+
+- Logs actions, previous state, and next state.
+- Helps debug Redux state updates.
+- Works only in development mode (configurable).
+
+2. What is Middleware in Redux?
+In Redux, middleware is a function that sits between dispatching an action and reaching the reducer. It can modify, log, or delay actions before they reach the reducer.
+
+Middleware can be used for: 
+- Logging (e.g., Redux Logger)
+- Handling async operations (e.g., Redux Thunk)
+- Modifying actions before reducers get them
+
+How Middleware Works in Redux
+
+Without middleware:
+
+dispatch(action) → reducer → update store → UI re-renders
+
+With middleware:
+
+dispatch(action) → middleware (e.g., logs the action) → reducer → update store → UI re-renders
+
+3. How Redux Logger Works
+Redux Logger intercepts actions and logs them before they reach the reducer.
+
+Example Log Output:
+
+prev state: { count: 0 }
+action: { type: "INCREMENT" }
+next state: { count: 1 }
+
+This helps in debugging why and how the state changes.
+
+4. Installing Redux Logger
+
+You need Redux and Redux Logger installed.
+
+Install Redux and Redux Logger:
+
+npm install redux redux-logger
+
+5. Using Redux Logger in a Redux Store
+
+Step 1: Import Dependencies
+
+import { createStore, applyMiddleware } from "redux";
+import logger from "redux-logger";
+
+Step 2: Create a Reducer
+
+const initialState = { count: 0 };
+
+const counterReducer = (state = initialState, action) => {
+    switch (action.type) {
+        case "INCREMENT":
+            return { count: state.count + 1 };
+        case "DECREMENT":
+            return { count: state.count - 1 };
+        default:
+            return state;
+    }
+};
+
+Step 3: Apply Middleware to the Store
+
+const store = createStore(counterReducer, applyMiddleware(logger));
+
+Now, every dispatched action automatically logs details in the console.
+
+6. Redux Logger in a React App
+
+Step 1: Setup Redux Store in store.js
+
+import { configureStore } from "@reduxjs/toolkit";
+import counterReducer from "./counterSlice";
+import logger from "redux-logger";
+
+const store = configureStore({
+    reducer: counterReducer,
+    middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger),
+});
+
+export default store;
+
+Step 2: Connect Redux to React
+
+import React from "react";
+import { Provider, useDispatch, useSelector } from "react-redux";
+import store from "./store";
+
+const Counter = () => {
+    const count = useSelector((state) => state.count);
+    const dispatch = useDispatch();
+
+    return (
+        <div>
+            <h1>Count: {count}</h1>
+            <button onClick={() => dispatch({ type: "INCREMENT" })}>Increment</button>
+            <button onClick={() => dispatch({ type: "DECREMENT" })}>Decrement</button>
+        </div>
+    );
+};
+
+const App = () => (
+    <Provider store={store}>
+        <Counter />
+    </Provider>
+);
+
+export default App;
+
+Now, whenever you click a button, Redux Logger logs the action and state changes in the console.
+
+7. Configuring Redux Logger
+
+You can customize Redux Logger to log only in development mode.
+
+import logger from "redux-logger";
+
+const middleware = [];
+
+if (process.env.NODE_ENV === "development") {
+    middleware.push(logger);
+}
+
+const store = createStore(
+    reducer,
+    applyMiddleware(...middleware)
+);
+
+Now, logs won’t appear in production.
+
+8. Summary:
+- Redux Logger is middleware that logs Redux actions and state changes.
+- Middleware sits between dispatching actions and reducers.
+- It helps debug Redux state updates.
+- Can be used with Redux Toolkit or createStore().
+- Best used only in development mode.
+
+Should You Use Redux Logger?
+- Yes, for debugging Redux state changes.
+- No, in production (disable it).
+
+Now, you can easily track Redux state changes using Redux Logger!
