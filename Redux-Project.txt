@@ -1,0 +1,95 @@
+Beginner Projects (Basics of Redux + Redux Toolkit)
+
+1. Counter App
+
+- Learn: Actions, reducers, Redux store, Redux Toolkit's createSlice.
+
+- Features: Increment, decrement, reset.
+
+2. Theme Switcher
+
+- Learn: Global UI state.
+
+- Features: Toggle between dark/light modes globally using Redux.
+
+3. To-Do List
+
+- Learn: Managing a list of items in the store, CRUD operations.
+
+- Features: Add, delete, complete, edit to-do items.
+
+4. Simple Shopping Cart
+
+- Learn: Managing cart state.
+
+- Features: Add/remove items, total calculation.
+
+5. Authentication Flow (Mock)
+
+- Learn: Managing auth state (login/logout).
+
+- Features: Login form, protected route simulation.
+
+Intermediate Projects (Async Logic & Middleware with RTK)
+
+6. Weather App
+
+- Learn: Async logic using createAsyncThunk.
+
+- Features: Fetch weather data from API, show loading and error states.
+
+7. Blog Post Manager
+
+- Learn: RTK async thunks, entity adapters.
+
+- Features: Fetch posts, add new post, edit, delete.
+
+8. Notes App with Tags
+
+- Learn: Normalized state structure with createEntityAdapter.
+
+- Features: Add/edit/delete notes with filters and tags.
+
+9. Recipe Finder App
+
+- Learn: Chained async calls, loading states.
+
+- Features: Search recipes, save favorites, paginate results.
+
+10. Expense Tracker
+
+- Learn: Combine multiple slices (expenses, filters).
+
+- Features: Add/edit/delete expenses, filter by category/date.
+
+Advanced Projects (Architecture, Caching, Testing)
+
+11. E-commerce App (Mini Version)
+
+- Learn: Combine complex state (auth, cart, products), caching, pagination.
+
+- Features: Product listing, details, cart, checkout simulation.
+
+12. Real-Time Chat App (Redux + WebSockets)
+
+- Learn: Middleware for WebSocket events, real-time updates.
+
+- Features: Send/receive messages, online status updates.
+
+13. Project Management Dashboard
+
+- Learn: Modular slice architecture, project/task/user state.
+
+- Features: Boards, tasks, assignees, filters.
+
+14. GitHub Repo Explorer
+
+- Learn: Advanced API interactions, caching strategies.
+
+- Features: Fetch user repos, pagination, search.
+
+15. Social Media Clone (Mini)
+
+- Learn: Full-scale Redux Toolkit integration, modular structure.
+
+- Features: Feed, likes, comments, user profiles, async state.
